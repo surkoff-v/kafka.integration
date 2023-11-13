@@ -14,4 +14,17 @@ Once started, you can open Kafdrop in your browser by navigating to localhost:90
 ## 2. kafka without zookeeper (KRaft) and kafdrop with docker
 see docker-compose.yml 
 
+to run some scripts from client in the same docker network from another container use  
+
+docker run -it --rm --network dockerscripts_broker-kafka/
+bitnami/kafka:latest kafka-topics.sh --list/
+--bootstrap-server kafka:9092
+
+if you want to connet to kafka from windows using CLI you have to dowload https://kafka.apache.org/downloads
+latest binary download unpack them and add <your kafka dir>kafka_<version>\bin\windows to your path 
+
+then you can run 
+
+kafka-topics.bat --list --bootstrap-server 127.0.0.1:9094
+
 
